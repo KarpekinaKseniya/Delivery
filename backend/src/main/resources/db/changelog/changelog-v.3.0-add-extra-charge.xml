@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet id="insert-extra-charge" author="kkarpekina">
+        <insert tableName="extra_charge">
+            <column name="id" value="1"/>
+            <column name="min_weight" value="13.7"/>
+            <column name="max_weight" value="18"/>
+            <column name="charge" value="64.3"/>
+            <column name="area_id" value="26"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=1</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="2"/>
+            <column name="min_weight" value="6.5"/>
+            <column name="max_weight" value="21.0"/>
+            <column name="charge" value="12.08"/>
+            <column name="area_id" value="20"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=2</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="3"/>
+            <column name="min_weight" value="6"/>
+            <column name="max_weight" value="8"/>
+            <column name="charge" value="2.09"/>
+            <column name="area_id" value="87"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=3</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="4"/>
+            <column name="min_weight" value="7"/>
+            <column name="max_weight" value="11"/>
+            <column name="charge" value="9.28"/>
+            <column name="area_id" value="72"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=4</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="5"/>
+            <column name="min_weight" value="1"/>
+            <column name="max_weight" value="4"/>
+            <column name="charge" value="5.58"/>
+            <column name="area_id" value="86"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=5</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="6"/>
+            <column name="min_weight" value="5"/>
+            <column name="max_weight" value="9"/>
+            <column name="charge" value="16.79"/>
+            <column name="area_id" value="60"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=6</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="7"/>
+            <column name="min_weight" value="7"/>
+            <column name="max_weight" value="11"/>
+            <column name="charge" value="23.79"/>
+            <column name="area_id" value="1"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=7</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="8"/>
+            <column name="min_weight" value="15"/>
+            <column name="max_weight" value="23"/>
+            <column name="charge" value="73.26"/>
+            <column name="area_id" value="91"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=8</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="9"/>
+            <column name="min_weight" value="11"/>
+            <column name="max_weight" value="18"/>
+            <column name="charge" value="33.7"/>
+            <column name="area_id" value="71"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=9</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="10"/>
+            <column name="min_weight" value="18"/>
+            <column name="max_weight" value="22"/>
+            <column name="charge" value="69.3"/>
+            <column name="area_id" value="14"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=10</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="11"/>
+            <column name="min_weight" value="1"/>
+            <column name="max_weight" value="23.57"/>
+            <column name="charge" value="56.45"/>
+            <column name="area_id" value="68"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=11</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="12"/>
+            <column name="min_weight" value="6"/>
+            <column name="max_weight" value="23"/>
+            <column name="charge" value="75.6"/>
+            <column name="area_id" value="91"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=12</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="13"/>
+            <column name="min_weight" value="11.5"/>
+            <column name="max_weight" value="19.5"/>
+            <column name="charge" value="47.52"/>
+            <column name="area_id" value="69"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=13</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="14"/>
+            <column name="min_weight" value="14"/>
+            <column name="max_weight" value="21"/>
+            <column name="charge" value="95.43"/>
+            <column name="area_id" value="6"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=14</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="15"/>
+            <column name="min_weight" value="7"/>
+            <column name="max_weight" value="19"/>
+            <column name="charge" value="77.99"/>
+            <column name="area_id" value="73"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=15</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="16"/>
+            <column name="min_weight" value="11"/>
+            <column name="max_weight" value="25"/>
+            <column name="charge" value="67.68"/>
+            <column name="area_id" value="8"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=16</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="17"/>
+            <column name="min_weight" value="3"/>
+            <column name="max_weight" value="13"/>
+            <column name="charge" value="53.72"/>
+            <column name="area_id" value="13"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=17</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="18"/>
+            <column name="min_weight" value="16"/>
+            <column name="max_weight" value="25"/>
+            <column name="charge" value="63.65"/>
+            <column name="area_id" value="19"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=18</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="19"/>
+            <column name="min_weight" value="5"/>
+            <column name="max_weight" value="10"/>
+            <column name="charge" value="43.14"/>
+            <column name="area_id" value="27"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=19</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="20"/>
+            <column name="min_weight" value="14"/>
+            <column name="max_weight" value="20"/>
+            <column name="charge" value="25.87"/>
+            <column name="area_id" value="14"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=20</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="21"/>
+            <column name="min_weight" value="4"/>
+            <column name="max_weight" value="9"/>
+            <column name="charge" value="7.12"/>
+            <column name="area_id" value="63"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=21</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="22"/>
+            <column name="min_weight" value="5"/>
+            <column name="max_weight" value="12"/>
+            <column name="charge" value="18.76"/>
+            <column name="area_id" value="74"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=22</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="23"/>
+            <column name="min_weight" value="7"/>
+            <column name="max_weight" value="16"/>
+            <column name="charge" value="20.86"/>
+            <column name="area_id" value="65"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=23</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="24"/>
+            <column name="min_weight" value="8"/>
+            <column name="max_weight" value="24"/>
+            <column name="charge" value="46.86"/>
+            <column name="area_id" value="19"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=24</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="25"/>
+            <column name="min_weight" value="14"/>
+            <column name="max_weight" value="19"/>
+            <column name="charge" value="55.79"/>
+            <column name="area_id" value="3"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=25</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="26"/>
+            <column name="min_weight" value="16"/>
+            <column name="max_weight" value="22"/>
+            <column name="charge" value="89.72"/>
+            <column name="area_id" value="15"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=26</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="27"/>
+            <column name="min_weight" value="2"/>
+            <column name="max_weight" value="10"/>
+            <column name="charge" value="31.24"/>
+            <column name="area_id" value="2"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=27</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="28"/>
+            <column name="min_weight" value="9"/>
+            <column name="max_weight" value="16"/>
+            <column name="charge" value="50.35"/>
+            <column name="area_id" value="71"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=28</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="29"/>
+            <column name="min_weight" value="1"/>
+            <column name="max_weight" value="4"/>
+            <column name="charge" value="11.12"/>
+            <column name="area_id" value="20"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=29</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="30"/>
+            <column name="min_weight" value="3"/>
+            <column name="max_weight" value="24"/>
+            <column name="charge" value="35.79"/>
+            <column name="area_id" value="89"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=30</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="31"/>
+            <column name="min_weight" value="5"/>
+            <column name="max_weight" value="16"/>
+            <column name="charge" value="94.93"/>
+            <column name="area_id" value="15"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=31</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="32"/>
+            <column name="min_weight" value="4"/>
+            <column name="max_weight" value="25"/>
+            <column name="charge" value="30.97"/>
+            <column name="area_id" value="67"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=32</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="33"/>
+            <column name="min_weight" value="6"/>
+            <column name="max_weight" value="24"/>
+            <column name="charge" value="92.25"/>
+            <column name="area_id" value="26"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=33</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="34"/>
+            <column name="min_weight" value="7"/>
+            <column name="max_weight" value="24"/>
+            <column name="charge" value="96.39"/>
+            <column name="area_id" value="6"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=34</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="35"/>
+            <column name="min_weight" value="6"/>
+            <column name="max_weight" value="12"/>
+            <column name="charge" value="30.26"/>
+            <column name="area_id" value="78"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=35</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="36"/>
+            <column name="min_weight" value="9"/>
+            <column name="max_weight" value="24"/>
+            <column name="charge" value="97.87"/>
+            <column name="area_id" value="60"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=36</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="37"/>
+            <column name="min_weight" value="6"/>
+            <column name="max_weight" value="11"/>
+            <column name="charge" value="56.48"/>
+            <column name="area_id" value="17"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=37</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="38"/>
+            <column name="min_weight" value="10"/>
+            <column name="max_weight" value="13"/>
+            <column name="charge" value="69.66"/>
+            <column name="area_id" value="71"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=38</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="39"/>
+            <column name="min_weight" value="2"/>
+            <column name="max_weight" value="11"/>
+            <column name="charge" value="57.41"/>
+            <column name="area_id" value="70"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=39</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="40"/>
+            <column name="min_weight" value="20"/>
+            <column name="max_weight" value="25"/>
+            <column name="charge" value="74.07"/>
+            <column name="area_id" value="4"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=40</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="41"/>
+            <column name="min_weight" value="18"/>
+            <column name="max_weight" value="25"/>
+            <column name="charge" value="81.61"/>
+            <column name="area_id" value="64"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=41</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="42"/>
+            <column name="min_weight" value="21"/>
+            <column name="max_weight" value="25"/>
+            <column name="charge" value="74.04"/>
+            <column name="area_id" value="60"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=42</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="43"/>
+            <column name="min_weight" value="10"/>
+            <column name="max_weight" value="16"/>
+            <column name="charge" value="25.84"/>
+            <column name="area_id" value="70"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=43</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="44"/>
+            <column name="min_weight" value="6"/>
+            <column name="max_weight" value="14"/>
+            <column name="charge" value="82.81"/>
+            <column name="area_id" value="91"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=44</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="45"/>
+            <column name="min_weight" value="1"/>
+            <column name="max_weight" value="5"/>
+            <column name="charge" value="72.96"/>
+            <column name="area_id" value="12"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=45</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="46"/>
+            <column name="min_weight" value="3"/>
+            <column name="max_weight" value="18"/>
+            <column name="charge" value="72.84"/>
+            <column name="area_id" value="78"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=46</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="47"/>
+            <column name="min_weight" value="1"/>
+            <column name="max_weight" value="16"/>
+            <column name="charge" value="5.59"/>
+            <column name="area_id" value="5"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=47</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="48"/>
+            <column name="min_weight" value="7"/>
+            <column name="max_weight" value="17"/>
+            <column name="charge" value="18.49"/>
+            <column name="area_id" value="3"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=48</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="49"/>
+            <column name="min_weight" value="6"/>
+            <column name="max_weight" value="16"/>
+            <column name="charge" value="15.59"/>
+            <column name="area_id" value="4"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=49</where>
+            </delete>
+        </rollback>
+        <insert tableName="extra_charge">
+            <column name="id" value="50"/>
+            <column name="min_weight" value="14"/>
+            <column name="max_weight" value="17"/>
+            <column name="charge" value="8.35"/>
+            <column name="area_id" value="6"/>
+        </insert>
+        <rollback>
+            <delete tableName="extra_charge">
+                <where>id=50</where>
+            </delete>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

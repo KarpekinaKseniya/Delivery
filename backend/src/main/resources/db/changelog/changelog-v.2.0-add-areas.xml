@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet id="insert-areas" author="kkarpekina">
+        <insert tableName="area">
+            <column name="id" value="22"/>
+            <column name="name" value="Palembang"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=22</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="28"/>
+            <column name="name" value="Bulawayo"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=28</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="29"/>
+            <column name="name" value="Shanghai"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=29</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="30"/>
+            <column name="name" value="Surabaya"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=30</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="31"/>
+            <column name="name" value="Daegu"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=31</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="32"/>
+            <column name="name" value="Dalian"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=32</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="25"/>
+            <column name="name" value="Giza"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=25</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="33"/>
+            <column name="name" value="Quezon City"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=33</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="34"/>
+            <column name="name" value="Praia"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=34</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="35"/>
+            <column name="name" value="Brest"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=35</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="36"/>
+            <column name="name" value="Qom"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=36</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="77"/>
+            <column name="name" value="Budapest"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=77</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="79"/>
+            <column name="name" value="São Paulo"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=79</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="75"/>
+            <column name="name" value="Jeddah"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=75</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="37"/>
+            <column name="name" value="Dubai"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=37</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="99"/>
+            <column name="name" value="Tainan"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=99</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="38"/>
+            <column name="name" value="Santiago"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=38</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="7"/>
+            <column name="name" value="Peshawar"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=7</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="39"/>
+            <column name="name" value="Hong Kong"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=39</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="40"/>
+            <column name="name" value="Shenzhen"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=40</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="41"/>
+            <column name="name" value="Accra"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=41</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="9"/>
+            <column name="name" value="Recife"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=9</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="42"/>
+            <column name="name" value="London"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=42</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="43"/>
+            <column name="name" value="Taipei"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=43</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="44"/>
+            <column name="name" value="Suzhou"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=44</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="23"/>
+            <column name="name" value="Changsha"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=23</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="24"/>
+            <column name="name" value="Bhopal"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=24</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="45"/>
+            <column name="name" value="Wenzhou"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=45</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="46"/>
+            <column name="name" value="Hyderabad"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=46</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="47"/>
+            <column name="name" value="Ho Chi Minh City"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=47</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="48"/>
+            <column name="name" value="Ottawa"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=48</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="49"/>
+            <column name="name" value="Malabo"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=49</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="50"/>
+            <column name="name" value="Kingston"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=50</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="51"/>
+            <column name="name" value="Yerevan"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=51</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="83"/>
+            <column name="name" value="Davao City"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=83</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="52"/>
+            <column name="name" value="Kano"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=52</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="53"/>
+            <column name="name" value="Sana'a"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=53</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="54"/>
+            <column name="name" value="Kawasaki"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=54</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="55"/>
+            <column name="name" value="Houston"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=55</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="56"/>
+            <column name="name" value="Durban"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=56</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="57"/>
+            <column name="name" value="Ahvaz"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=57</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="58"/>
+            <column name="name" value="Visakhapatnam"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=58</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="59"/>
+            <column name="name" value="Casablanca"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=59</where>
+            </delete>
+        </rollback>
+
+        <insert tableName="area">
+            <column name="id" value="60"/>
+            <column name="name" value="Suwon"/>
+            <column name="base_charge" value="219.36"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=60</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="1"/>
+            <column name="name" value="Changchun"/>
+            <column name="base_charge" value="72.89"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=1</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="4"/>
+            <column name="name" value="Riyadh"/>
+            <column name="base_charge" value="89.91"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=4</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="2"/>
+            <column name="name" value="Busan"/>
+            <column name="base_charge" value="179.19"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=2</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="3"/>
+            <column name="name" value="Novosibirsk"/>
+            <column name="base_charge" value="99.26"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=3</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="5"/>
+            <column name="name" value="T'bilisi"/>
+            <column name="base_charge" value="44.81"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=5</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="6"/>
+            <column name="name" value="Mexico City"/>
+            <column name="base_charge" value="124.34"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=6</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="8"/>
+            <column name="name" value="Baku"/>
+            <column name="base_charge" value="138.08"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=8</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="10"/>
+            <column name="name" value="Tangshan"/>
+            <column name="base_charge" value="210.83"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=10</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="11"/>
+            <column name="name" value="Santa Cruz de la Sierra"/>
+            <column name="base_charge" value="101.86"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=11</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="91"/>
+            <column name="name" value="Lanzhou"/>
+            <column name="base_charge" value="134.59"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=91</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="12"/>
+            <column name="name" value="Chicago"/>
+            <column name="base_charge" value="19.32"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=12</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="13"/>
+            <column name="name" value="Cologne"/>
+            <column name="base_charge" value="67.8"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=13</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="14"/>
+            <column name="name" value="Hanoi"/>
+            <column name="base_charge" value="112.59"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=14</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="15"/>
+            <column name="name" value="Gujranwala"/>
+            <column name="base_charge" value="209.82"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=15</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="16"/>
+            <column name="name" value="Yangon"/>
+            <column name="base_charge" value="239.89"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=16</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="17"/>
+            <column name="name" value="Ouagadougou"/>
+            <column name="base_charge" value="161.01"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=17</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="19"/>
+            <column name="name" value="Paris"/>
+            <column name="base_charge" value="249.22"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=19</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="61"/>
+            <column name="name" value="New Taipei City"/>
+            <column name="base_charge" value="60.02"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=61</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="62"/>
+            <column name="name" value="Qingdao"/>
+            <column name="base_charge" value="97.58"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=62</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="63"/>
+            <column name="name" value="Kathmandu"/>
+            <column name="base_charge" value="22.08"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=63</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="78"/>
+            <column name="name" value="Gomel"/>
+            <column name="base_charge" value="194.37"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=78</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="64"/>
+            <column name="name" value="Kwangju,Korea"/>
+            <column name="base_charge" value="118.09"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=64</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="65"/>
+            <column name="name" value="Lagos"/>
+            <column name="base_charge" value="120.83"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=65</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="66"/>
+            <column name="name" value="Tabriz"/>
+            <column name="base_charge" value="23.4"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=66</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="92"/>
+            <column name="name" value="Saint Petersburg"/>
+            <column name="base_charge" value="47.24"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=92</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="67"/>
+            <column name="name" value="Islamabad"/>
+            <column name="base_charge" value="77.73"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=67</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="26"/>
+            <column name="name" value="Kanpur"/>
+            <column name="base_charge" value="5.24"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=26</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="68"/>
+            <column name="name" value="Jakarta"/>
+            <column name="base_charge" value="131.2"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=68</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="69"/>
+            <column name="name" value="Lusaka"/>
+            <column name="base_charge" value="90.63"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=69</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="70"/>
+            <column name="name" value="Shantou"/>
+            <column name="base_charge" value="129.85"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=70</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="71"/>
+            <column name="name" value="Basra"/>
+            <column name="base_charge" value="188.95"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=71</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="72"/>
+            <column name="name" value="Daejeon"/>
+            <column name="base_charge" value="184.05"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=72</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="18"/>
+            <column name="name" value="Foshan"/>
+            <column name="base_charge" value="190.21"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=18</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="73"/>
+            <column name="name" value="Curitiba"/>
+            <column name="base_charge" value="212.38"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=73</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="27"/>
+            <column name="name" value="Phnom Penh"/>
+            <column name="base_charge" value="15.38"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=27</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="86"/>
+            <column name="name" value="Gaborone"/>
+            <column name="base_charge" value="42.6"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=86</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+        <column name="id" value="74"/>
+        <column name="name" value="Amsterdam"/>
+        <column name="base_charge" value="232.8"/>
+        <column name="has_delivery" value="true"/>
+    </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=74</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="20"/>
+            <column name="name" value="Fuzhou"/>
+            <column name="base_charge" value="195.16"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=20</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="21"/>
+            <column name="name" value="Surat"/>
+            <column name="base_charge" value="206.16"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=21</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="87"/>
+            <column name="name" value="Zunyi"/>
+            <column name="base_charge" value="72.45"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=87</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="89"/>
+            <column name="name" value="Lahore"/>
+            <column name="base_charge" value="149.76"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=89</where>
+            </delete>
+        </rollback>
+        <insert tableName="area">
+            <column name="id" value="76"/>
+            <column name="name" value="Saitama"/>
+            <column name="base_charge" value="133.39"/>
+            <column name="has_delivery" value="true"/>
+        </insert>
+        <rollback>
+            <delete tableName="area">
+                <where>id=76</where>
+            </delete>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>
