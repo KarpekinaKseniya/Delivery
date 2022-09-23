@@ -11,8 +11,18 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
+@Data
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "extra_charge")
 public class ExtraCharge implements Serializable {
 
@@ -27,6 +37,8 @@ public class ExtraCharge implements Serializable {
     @Column(name = "charge", nullable = false)
     private float charge;
     @ManyToOne
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @JoinColumn(name = "area_id", nullable = false)
     private Area area;
 }

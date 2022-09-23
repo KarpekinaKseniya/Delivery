@@ -5,5 +5,4 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import com.self.education.delivery.domain.Area;
 
 public interface AreaRepository extends JpaRepository<Area, Long>, JpaSpecificationExecutor<Area> {
-
 }

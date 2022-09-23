@@ -1,6 +1,5 @@
 package com.self.education.delivery.api;
 
-import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,10 +9,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AreaRequest {
-
-    private String name;
-    private float baseCharge;
-    private boolean hasDelivery;
-    private List<ExtraChargeRequest> extraCharges;
+public class ExtraChargeRequest {
+    private Long id;
+    private float minWeight;
+    private float maxWeight;
+    private float charge;
 }
