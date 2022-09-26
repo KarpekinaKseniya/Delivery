@@ -14,7 +14,7 @@ public class AreaResponse {
 
     private Long id;
     private String name;
-    private float baseCharge;
+    private Float baseCharge;
     private boolean hasDelivery;
     private List<ExtraChargeResponse> extraCharges;
 }

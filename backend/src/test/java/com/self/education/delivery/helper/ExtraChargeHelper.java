@@ -49,6 +49,7 @@ public class ExtraChargeHelper {
     public static ExtraCharge minExtraChargeEntity() {
         //@formatter:off
         return ExtraCharge.builder()
+                .id(2L)
                 .charge(MIN_CHARGE)
                 .minWeight(MIN_WEIGHT)
                 .maxWeight(MIN_MAX_WEIGHT)

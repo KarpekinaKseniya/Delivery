@@ -17,7 +17,7 @@ public class AreaHelper {
 
     private static final String NAME = "Bulawayo";
     private static final float BASE_CHARGE = 4.56f;
-    public static final Long ID = 4L;
+    public static final Long ID = 1L;
 
     public static Area.AreaBuilder areaEntityBuilder() {
         //@formatter:off

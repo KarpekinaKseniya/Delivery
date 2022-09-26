@@ -5,5 +5,5 @@ import com.self.education.delivery.domain.Area;
 
 public interface BaseSpecification {
 
-    Specification<Area> toSpecification(String name);
+    Specification<Area> toSpecification(String name, Boolean isDelivary);
 }

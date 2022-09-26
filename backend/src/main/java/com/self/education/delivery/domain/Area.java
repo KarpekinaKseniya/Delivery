@@ -31,7 +31,7 @@ public class Area implements Serializable {
     @Column(name = "name", nullable = false, unique = true)
     private String name;
     @Column(name = "base_charge")
-    private float baseCharge;
+    private Float baseCharge;
     @Column(name = "has_delivery")
     private boolean hasDelivery;
     @OneToMany(mappedBy = "area")

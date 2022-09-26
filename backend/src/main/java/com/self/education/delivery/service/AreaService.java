@@ -1,12 +1,12 @@
 package com.self.education.delivery.service;
 
-import org.springframework.data.domain.Page;
+import java.util.List;
 import com.self.education.delivery.api.AreaRequest;
-import com.self.education.delivery.resource.AreaResource;
+import com.self.education.delivery.api.AreaResponse;
 
 public interface AreaService {
 
-    Page<AreaResource> findAll(String name);
+    List<AreaResponse> findAll(String name, Boolean isDelivery);
 
-    Long updateArea(AreaRequest request);
+    Long updateArea(Long id, AreaRequest request);
 }

@@ -48,7 +48,7 @@ class AreaMapperTest {
         //@formatter:off
         return Stream.of(
                 Arguments.of(null, null),
-                Arguments.of(areaEntityBuilder().extraCharges(null).build(), areaResponseBuilder().extraCharges(null).build())
+                Arguments.of(areaEntityBuilder().baseCharge(null).extraCharges(null).build(), areaResponseBuilder().baseCharge(null).extraCharges(null).build())
         );
         //@formatter:on
     }
