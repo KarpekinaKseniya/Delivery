@@ -8,5 +8,5 @@ public interface AreaService {
 
     List<AreaResponse> findAll(String name, Boolean isDelivery);
 
-    Long updateArea(Long id, AreaRequest request);
+    void updateArea(Long id, AreaRequest request);
 }

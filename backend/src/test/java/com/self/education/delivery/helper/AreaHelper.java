@@ -15,15 +15,15 @@ import com.self.education.delivery.domain.Area;
 
 public class AreaHelper {
 
-    private static final String NAME = "Bulawayo";
     private static final float BASE_CHARGE = 4.56f;
+    public static final String AREA_NAME = "Bulawayo";
     public static final Long ID = 1L;
 
     public static Area.AreaBuilder areaEntityBuilder() {
         //@formatter:off
         return Area.builder()
                 .id(ID)
-                .name(NAME)
+                .name(AREA_NAME)
                 .baseCharge(BASE_CHARGE)
                 .extraCharges(List.of(averageExtraChargeEntityBuilder().build(), minExtraChargeEntity()))
                 .hasDelivery(FALSE);
@@ -44,7 +44,7 @@ public class AreaHelper {
         //@formatter:off
         return AreaResponse.builder()
                 .id(ID)
-                .name(NAME)
+                .name(AREA_NAME)
                 .baseCharge(BASE_CHARGE)
                 .extraCharges(List.of(averageExtraChargeResponse(), minExtraChargeResponse()))
                 .hasDelivery(FALSE);

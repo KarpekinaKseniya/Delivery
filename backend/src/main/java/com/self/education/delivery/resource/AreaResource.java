@@ -1,5 +1,6 @@
 package com.self.education.delivery.resource;
 
+import static org.springframework.http.HttpStatus.NO_CONTENT;
 import static org.springframework.http.ResponseEntity.ok;
 
 import java.util.List;
@@ -50,7 +51,7 @@ public class AreaResource {
             summary = "Update area information",
             description = "Endpoint for updating information about area",
             responses = {
-                    @ApiResponse(responseCode = "200", description = "Ok"),
+                    @ApiResponse(responseCode = "204", description = "No Content"),
                     @ApiResponse(responseCode = "400", description = "Bad Request", content = @Content(schema = @Schema(implementation = ErrorResponse.class))),
                     @ApiResponse(responseCode = "404", description = "Not Found", content = @Content(schema = @Schema(implementation = ErrorResponse.class))),
                     @ApiResponse(responseCode = "500", description = "Internal Server Error", content = @Content(schema = @Schema(implementation = ErrorResponse.class)))
@@ -58,7 +59,8 @@ public class AreaResource {
     )
     //@formatter:on
     @PatchMapping("/{id}")
-    public ResponseEntity<Long> updateArea(@PathVariable final Long id, @RequestBody final AreaRequest request) {
-        return ok(areaService.updateArea(id, request));
+    public ResponseEntity<Void> updateArea(@PathVariable final Long id, @RequestBody final AreaRequest request) {
+        areaService.updateArea(id, request);
+        return new ResponseEntity<>(NO_CONTENT);
     }
 }

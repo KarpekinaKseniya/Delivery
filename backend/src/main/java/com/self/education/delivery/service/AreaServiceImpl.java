@@ -33,10 +33,10 @@ public class AreaServiceImpl implements AreaService {
     }
 
     @Override
-    public Long updateArea(final Long id, final AreaRequest request) {
-        if (areaRepository.existsById(id)) {
-            return areaRepository.save(areaMapper.mapRequestToEntity(id, request)).getId();
+    public void updateArea(final Long id, final AreaRequest request) {
+        if (!areaRepository.existsById(id)) {
+            throw new EntityNotFoundException(format("Area not found by id = %s", id));
         }
-        throw new EntityNotFoundException(format("Area not found by id = %s", id));
+        areaRepository.save(areaMapper.mapRequestToEntity(id, request));
     }
 }

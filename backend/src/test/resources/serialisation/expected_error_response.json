@@ -1,0 +1,5 @@
+{
+  "statusCode" : 404,
+  "message" : "some error message",
+  "description" : "Some error description"
+}
