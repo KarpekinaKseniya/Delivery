@@ -36,7 +36,7 @@ public class ExtraCharge implements Serializable {
     private float maxWeight;
     @Column(name = "charge", nullable = false)
     private float charge;
-    @ManyToOne
+    @ManyToOne(optional = false)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @JoinColumn(name = "area_id", nullable = false)

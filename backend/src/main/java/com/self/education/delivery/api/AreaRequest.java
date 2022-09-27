@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class AreaRequest {
 
-    private String name;
     private float baseCharge;
     private boolean hasDelivery;
     private List<ExtraChargeRequest> extraCharges;

@@ -2,7 +2,7 @@ package com.self.education.delivery.mapper;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static com.self.education.delivery.helper.ExtraChargeHelper.averageExtraChargeEntity;
+import static com.self.education.delivery.helper.ExtraChargeHelper.averageExtraChargeEntityBuilder;
 import static com.self.education.delivery.helper.ExtraChargeHelper.averageExtraChargeRequest;
 import static com.self.education.delivery.helper.ExtraChargeHelper.averageExtraChargeResponse;
 
@@ -22,14 +22,14 @@ class ExtraChargeMapperTest {
         //@formatter:off
         return Stream.of(
                 Arguments.of(null, null),
-                Arguments.of(averageExtraChargeEntity(), averageExtraChargeResponse())
+                Arguments.of(averageExtraChargeEntityBuilder().build(), averageExtraChargeResponse())
         );
         //@formatter:on
     }
 
     private static Stream<Arguments> requestAndEntityData() {
         return Stream.of(Arguments.of(null, null),
-                Arguments.of(averageExtraChargeRequest(), averageExtraChargeEntity()));
+                Arguments.of(averageExtraChargeRequest(), averageExtraChargeEntityBuilder().id(null).build()));
     }
 
     @ParameterizedTest

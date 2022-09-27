@@ -1,7 +1,7 @@
 package com.self.education.delivery.helper;
 
 import static java.lang.Boolean.FALSE;
-import static com.self.education.delivery.helper.ExtraChargeHelper.averageExtraChargeEntity;
+import static com.self.education.delivery.helper.ExtraChargeHelper.averageExtraChargeEntityBuilder;
 import static com.self.education.delivery.helper.ExtraChargeHelper.averageExtraChargeRequest;
 import static com.self.education.delivery.helper.ExtraChargeHelper.averageExtraChargeResponse;
 import static com.self.education.delivery.helper.ExtraChargeHelper.minExtraChargeEntity;
@@ -25,7 +25,7 @@ public class AreaHelper {
                 .id(ID)
                 .name(NAME)
                 .baseCharge(BASE_CHARGE)
-                .extraCharges(List.of(averageExtraChargeEntity(), minExtraChargeEntity()))
+                .extraCharges(List.of(averageExtraChargeEntityBuilder().build(), minExtraChargeEntity()))
                 .hasDelivery(FALSE);
         //@formatter:on
     }
@@ -35,8 +35,8 @@ public class AreaHelper {
         return AreaRequest.builder()
                 .baseCharge(BASE_CHARGE)
                 .extraCharges(List.of(averageExtraChargeRequest(), minExtraChargeRequest()))
-                .hasDelivery(FALSE)
-                .name(NAME);
+                .hasDelivery(FALSE);
+                //.name(NAME);
         //@formatter:on
     }
 

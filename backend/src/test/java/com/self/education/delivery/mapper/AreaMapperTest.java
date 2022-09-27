@@ -10,7 +10,7 @@ import static com.self.education.delivery.helper.AreaHelper.ID;
 import static com.self.education.delivery.helper.AreaHelper.areaEntityBuilder;
 import static com.self.education.delivery.helper.AreaHelper.areaRequestBuilder;
 import static com.self.education.delivery.helper.AreaHelper.areaResponseBuilder;
-import static com.self.education.delivery.helper.ExtraChargeHelper.averageExtraChargeEntity;
+import static com.self.education.delivery.helper.ExtraChargeHelper.averageExtraChargeEntityBuilder;
 import static com.self.education.delivery.helper.ExtraChargeHelper.averageExtraChargeRequest;
 import static com.self.education.delivery.helper.ExtraChargeHelper.averageExtraChargeResponse;
 import static com.self.education.delivery.helper.ExtraChargeHelper.minExtraChargeEntity;
@@ -57,7 +57,7 @@ class AreaMapperTest {
         //@formatter:off
         return Stream.of(
                 Arguments.of(null,null, null),
-                Arguments.of(null, areaRequestBuilder().extraCharges(null).build(), areaEntityBuilder().id(null).extraCharges(null).build()),
+                Arguments.of(null, areaRequestBuilder().extraCharges(null).build(), areaEntityBuilder().name(null).id(null).extraCharges(null).build()),
                 Arguments.of(ID, null, Area.builder().id(ID).build())
         );
         //@formatter:on
@@ -77,10 +77,10 @@ class AreaMapperTest {
 
     @Test
     void shouldMapRequestToEntity() {
-        given(chargeMapper.mapRequestToEntity(averageExtraChargeRequest())).willReturn(averageExtraChargeEntity());
+        given(chargeMapper.mapRequestToEntity(averageExtraChargeRequest())).willReturn(averageExtraChargeEntityBuilder().build());
         given(chargeMapper.mapRequestToEntity(minExtraChargeRequest())).willReturn(minExtraChargeEntity());
 
-        assertThat(mapper.mapRequestToEntity(ID, areaRequestBuilder().build()), is(areaEntityBuilder().build()));
+        assertThat(mapper.mapRequestToEntity(ID, areaRequestBuilder().build()), is(areaEntityBuilder().name(null).build()));
 
         then(chargeMapper).should(times(1)).mapRequestToEntity(averageExtraChargeRequest());
         then(chargeMapper).should(times(1)).mapRequestToEntity(minExtraChargeRequest());
@@ -88,12 +88,12 @@ class AreaMapperTest {
 
     @Test
     void shouldMapEntityToResponse() {
-        given(chargeMapper.mapEntityToResponse(averageExtraChargeEntity())).willReturn(averageExtraChargeResponse());
+        given(chargeMapper.mapEntityToResponse(averageExtraChargeEntityBuilder().build())).willReturn(averageExtraChargeResponse());
         given(chargeMapper.mapEntityToResponse(minExtraChargeEntity())).willReturn(minExtraChargeResponse());
 
         assertThat(mapper.mapEntityToResponse(areaEntityBuilder().build()), is(areaResponseBuilder().build()));
 
-        then(chargeMapper).should(times(1)).mapEntityToResponse(averageExtraChargeEntity());
+        then(chargeMapper).should(times(1)).mapEntityToResponse(averageExtraChargeEntityBuilder().build());
         then(chargeMapper).should(times(1)).mapEntityToResponse(minExtraChargeEntity());
     }
 }

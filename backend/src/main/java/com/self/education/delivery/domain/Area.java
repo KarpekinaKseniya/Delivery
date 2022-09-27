@@ -1,5 +1,7 @@
 package com.self.education.delivery.domain;
 
+import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.SEQUENCE;
 
 import java.io.Serializable;
@@ -28,12 +30,19 @@ public class Area implements Serializable {
     @GeneratedValue(strategy = SEQUENCE, generator = "areas_sequence_generator")
     @SequenceGenerator(name = "areas_sequence_generator", sequenceName = "areas_id_seq", allocationSize = 1)
     private Long id;
-    @Column(name = "name", nullable = false, unique = true)
+    @Column(name = "name", nullable = false, unique = true, updatable = false)
     private String name;
     @Column(name = "base_charge")
     private Float baseCharge;
     @Column(name = "has_delivery")
     private boolean hasDelivery;
-    @OneToMany(mappedBy = "area")
+    @OneToMany(mappedBy = "area", fetch = LAZY, cascade = ALL, orphanRemoval = true)
     private List<ExtraCharge> extraCharges;
+
+    public void setExtraCharges(final List<ExtraCharge> extraCharges) {
+        if (null != extraCharges) {
+            extraCharges.forEach(charge -> charge.setArea(this));
+        }
+        this.extraCharges = extraCharges;
+    }
 }

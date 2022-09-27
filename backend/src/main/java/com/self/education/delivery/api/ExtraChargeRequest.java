@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ExtraChargeRequest {
-    private Long id;
+
     private float minWeight;
     private float maxWeight;
     private float charge;

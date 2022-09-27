@@ -605,5 +605,8 @@
                 <where>id=50</where>
             </delete>
         </rollback>
+        <sql>
+            ALTER SEQUENCE extra_charges_id_seq RESTART WITH 51;
+        </sql>
     </changeSet>
 </databaseChangeLog>

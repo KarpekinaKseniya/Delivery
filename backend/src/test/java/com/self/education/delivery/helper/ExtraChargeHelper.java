@@ -14,21 +14,20 @@ public class ExtraChargeHelper {
     private static final float MIN_WEIGHT = 1.25f;
     private static final float MIN_MAX_WEIGHT = 5.75f;
 
-    public static ExtraCharge averageExtraChargeEntity() {
+    public static ExtraCharge.ExtraChargeBuilder averageExtraChargeEntityBuilder() {
         //@formatter:off
         return ExtraCharge.builder()
                 .id(1L)
                 .charge(AVERAGE_CHARGE)
                 .minWeight(AVERAGE_MIN_WEIGHT)
-                .maxWeight(AVERAGE_MAX_WEIGHT)
-                .build();
+                .maxWeight(AVERAGE_MAX_WEIGHT);
         //@formatter:on
     }
 
     public static ExtraChargeRequest averageExtraChargeRequest() {
         //@formatter:off
         return ExtraChargeRequest.builder()
-                .id(1L)
+                //.id(1L)
                 .charge(AVERAGE_CHARGE)
                 .minWeight(AVERAGE_MIN_WEIGHT)
                 .maxWeight(AVERAGE_MAX_WEIGHT)
