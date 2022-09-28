@@ -4,7 +4,10 @@ import static org.springframework.http.HttpStatus.NO_CONTENT;
 import static org.springframework.http.ResponseEntity.ok;
 
 import java.util.List;
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +28,7 @@ import lombok.AllArgsConstructor;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/v1/areas")
+@Validated
 public class AreaResource {
 
     private final AreaService areaService;
@@ -59,7 +63,8 @@ public class AreaResource {
     )
     //@formatter:on
     @PatchMapping("/{id}")
-    public ResponseEntity<Void> updateArea(@PathVariable final Long id, @RequestBody final AreaRequest request) {
+    public ResponseEntity<Void> updateArea(@Min(1) @PathVariable final Long id,
+            @Valid @RequestBody final AreaRequest request) {
         areaService.updateArea(id, request);
         return new ResponseEntity<>(NO_CONTENT);
     }

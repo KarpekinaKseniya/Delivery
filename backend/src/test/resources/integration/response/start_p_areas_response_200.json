@@ -1,0 +1,16 @@
+[
+  {
+    "id": 3,
+    "name": "Palembang",
+    "baseCharge": null,
+    "hasDelivery": false,
+    "extraCharges": []
+  },
+  {
+    "id": 2,
+    "name": "Phnom Penh",
+    "baseCharge": 15.38,
+    "hasDelivery": true,
+    "extraCharges": []
+  }
+]
