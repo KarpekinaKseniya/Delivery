@@ -11,19 +11,13 @@ import com.self.education.delivery.domain.Area_;
 public class AreaSpecification implements BaseSpecification {
 
     @Override
-    public Specification<Area> toSpecification(final String name, final Boolean isDelivery) {
-        return Specification.where(startWith(name)).and(delivered(isDelivery));
+    public Specification<Area> toSpecification(final String name) {
+        return Specification.where(startWith(name));
     }
 
     private Specification<Area> startWith(final String name) {
         return (root, query, criteria) -> isNull(name) ?
                 criteria.isTrue(criteria.literal(true)) :
                 criteria.like(criteria.lower(root.get(Area_.NAME)), name.toLowerCase() + "%");
-    }
-
-    private Specification<Area> delivered(final Boolean isDelivery) {
-        return (root, query, criteria) -> isNull(isDelivery) ?
-                criteria.isTrue(criteria.literal(true)) :
-                criteria.equal(root.get(Area_.HAS_DELIVERY), isDelivery);
     }
 }

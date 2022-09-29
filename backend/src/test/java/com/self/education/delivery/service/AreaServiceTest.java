@@ -65,50 +65,50 @@ class AreaServiceTest {
     void shouldFindAllSuccess() {
         final List<AreaResponse> expected = List.of(areaResponseBuilder().build());
 
-        given(specification.toSpecification(AREA_NAME, FALSE)).willReturn(mockSpecification);
+        given(specification.toSpecification(AREA_NAME)).willReturn(mockSpecification);
         given(areaRepository.findAll(mockSpecification, SORT)).willReturn(List.of(areaEntityBuilder().build()));
         given(areaMapper.mapEntityToResponse(areaEntityBuilder().build())).willReturn(areaResponseBuilder().build());
 
-        final List<AreaResponse> actual = service.findAll(AREA_NAME, FALSE);
+        final List<AreaResponse> actual = service.findAll(AREA_NAME);
         assertThat(actual, is(expected));
 
-        then(specification).should(only()).toSpecification(AREA_NAME, FALSE);
+        then(specification).should(only()).toSpecification(AREA_NAME);
         then(areaRepository).should(only()).findAll(mockSpecification, SORT);
         then(areaMapper).should(only()).mapEntityToResponse(areaEntityBuilder().build());
     }
 
     @Test
     void shouldFindAllFailureWhenAreaSpecificationThrowException() {
-        given(specification.toSpecification(AREA_NAME, FALSE)).willThrow(SOME_EXCEPTION);
+        given(specification.toSpecification(AREA_NAME)).willThrow(SOME_EXCEPTION);
 
-        final Exception actual = assertThrows(RuntimeException.class, () -> service.findAll(AREA_NAME, FALSE));
+        final Exception actual = assertThrows(RuntimeException.class, () -> service.findAll(AREA_NAME));
         assertThat(actual, is(SOME_EXCEPTION));
 
-        then(specification).should(only()).toSpecification(AREA_NAME, FALSE);
+        then(specification).should(only()).toSpecification(AREA_NAME);
     }
 
     @Test
     void shouldFindAllFailureWhenAreaRepositoryThrowException() {
-        given(specification.toSpecification(AREA_NAME, FALSE)).willReturn(mockSpecification);
+        given(specification.toSpecification(AREA_NAME)).willReturn(mockSpecification);
         given(areaRepository.findAll(mockSpecification, SORT)).willThrow(SOME_EXCEPTION);
 
-        final Exception actual = assertThrows(RuntimeException.class, () -> service.findAll(AREA_NAME, FALSE));
+        final Exception actual = assertThrows(RuntimeException.class, () -> service.findAll(AREA_NAME));
         assertThat(actual, is(SOME_EXCEPTION));
 
-        then(specification).should(only()).toSpecification(AREA_NAME, FALSE);
+        then(specification).should(only()).toSpecification(AREA_NAME);
         then(areaRepository).should(only()).findAll(mockSpecification, SORT);
     }
 
     @Test
     void shouldFindAllFailureWhenAreaMapperThrowException() {
-        given(specification.toSpecification(AREA_NAME, FALSE)).willReturn(mockSpecification);
+        given(specification.toSpecification(AREA_NAME)).willReturn(mockSpecification);
         given(areaRepository.findAll(mockSpecification, SORT)).willReturn(List.of(areaEntityBuilder().build()));
         given(areaMapper.mapEntityToResponse(areaEntityBuilder().build())).willThrow(SOME_EXCEPTION);
 
-        final Exception actual = assertThrows(RuntimeException.class, () -> service.findAll(AREA_NAME, FALSE));
+        final Exception actual = assertThrows(RuntimeException.class, () -> service.findAll(AREA_NAME));
         assertThat(actual, is(SOME_EXCEPTION));
 
-        then(specification).should(only()).toSpecification(AREA_NAME, FALSE);
+        then(specification).should(only()).toSpecification(AREA_NAME);
         then(areaRepository).should(only()).findAll(mockSpecification, SORT);
         then(areaMapper).should(only()).mapEntityToResponse(areaEntityBuilder().build());
     }

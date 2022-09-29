@@ -44,9 +44,7 @@ class AreaResourceIT {
         //@formatter:off
         return Stream.of(
                 Arguments.of(emptyMap(), "all_areas_response_200.json"),
-                Arguments.of(Map.of("name", "p"), "start_p_areas_response_200.json"),
-                Arguments.of(Map.of("isDelivery", "false"), "area_which_is_not_delivery_response_200.json"),
-                Arguments.of(Map.of("name", "p", "isDelivery", "false"), "find_area_with_all_param_response_200.json")
+                Arguments.of(Map.of("name", "p"), "start_p_areas_response_200.json")
         );
         //@formatter:on
     }

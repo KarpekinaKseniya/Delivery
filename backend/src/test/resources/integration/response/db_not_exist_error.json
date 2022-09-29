@@ -1,5 +1,5 @@
 {
   "statusCode": 500,
-  "message": "could not prepare statement; SQL [select area0_.id as id1_0_, area0_.base_charge as base_cha2_0_, area0_.has_delivery as has_deli3_0_, area0_.name as name4_0_ from area area0_ where ?=true and ?=true order by area0_.name asc]; nested exception is org.hibernate.exception.SQLGrammarException: could not prepare statement",
+  "message": "could not prepare statement; SQL [select area0_.id as id1_0_, area0_.base_charge as base_cha2_0_, area0_.has_delivery as has_deli3_0_, area0_.name as name4_0_ from area area0_ where ?=true order by area0_.name asc]; nested exception is org.hibernate.exception.SQLGrammarException: could not prepare statement",
   "description": "uri=/v1/areas"
 }

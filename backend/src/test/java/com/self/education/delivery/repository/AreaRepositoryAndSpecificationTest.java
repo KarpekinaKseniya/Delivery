@@ -42,21 +42,16 @@ class AreaRepositoryAndSpecificationTest {
     private static Stream<Arguments> data() {
         //@formatter:off
         return Stream.of(
-                Arguments.of(null, null, 5, containsInAnyOrder(
+                Arguments.of(null, 5, containsInAnyOrder(
                         hasProperty("name", is("Bulawayo")),
                         hasProperty("name", is("Phnom Penh")),
                         hasProperty("name", is("Palembang")),
                         hasProperty("name", is("Amsterdam")),
                         hasProperty("name", is("Gaborone"))
                         )),
-                Arguments.of("p", null, 2, containsInAnyOrder(
+                Arguments.of("p", 2, containsInAnyOrder(
                         hasProperty("name", is("Phnom Penh")),
-                        hasProperty("name", is("Palembang")))),
-                Arguments.of(null, false, 2, containsInAnyOrder(
-                        hasProperty("name", is("Bulawayo")),
-                        hasProperty("name", is("Palembang"))
-                )),
-                Arguments.of("bul", false, 1, containsInAnyOrder(hasProperty("name", is("Bulawayo"))))
+                        hasProperty("name", is("Palembang"))))
         );
         //@formatter:on
     }
@@ -64,10 +59,10 @@ class AreaRepositoryAndSpecificationTest {
     @ParameterizedTest
     @MethodSource("data")
     @Sql({ "classpath:integration/db/db_cleanup.sql", "/integration/db/db_data.sql" })
-    void shouldFindAllWithParams(final String name, final Boolean isDelivery, final int expectedSize,
+    void shouldFindAllWithParams(final String name, final int expectedSize,
             final Matcher<Iterable<? extends Area>> expected) {
         final Sort sort = Sort.by(Sort.Direction.ASC, "name");
-        final Specification<Area> spec = areaSpecification.toSpecification(name, isDelivery);
+        final Specification<Area> spec = areaSpecification.toSpecification(name);
 
         final List<Area> actual = repository.findAll(spec, sort);
 

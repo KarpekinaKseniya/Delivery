@@ -45,9 +45,8 @@ public class AreaResource {
     //@formatter:on
     @GetMapping
     public ResponseEntity<List<AreaResponse>> findAllAreas(
-            @RequestParam(value = "name", required = false) final String name,
-            @RequestParam(value = "isDelivery", required = false) final Boolean isDelivery) {
-        return ok(areaService.findAll(name, isDelivery));
+            @RequestParam(value = "name", required = false) final String name) {
+        return ok(areaService.findAll(name));
     }
 
     //@formatter:off

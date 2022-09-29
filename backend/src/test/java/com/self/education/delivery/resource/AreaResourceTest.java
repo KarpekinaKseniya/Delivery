@@ -1,6 +1,5 @@
 package com.self.education.delivery.resource;
 
-import static java.lang.Boolean.FALSE;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -50,12 +49,12 @@ class AreaResourceTest {
     @Test
     void shouldFindAllAreas() {
         final List<AreaResponse> expected = List.of(areaResponseBuilder().build());
-        given(areaService.findAll(AREA_NAME, FALSE)).willReturn(expected);
+        given(areaService.findAll(AREA_NAME)).willReturn(expected);
 
-        final ResponseEntity<List<AreaResponse>> actual = resource.findAllAreas(AREA_NAME, FALSE);
+        final ResponseEntity<List<AreaResponse>> actual = resource.findAllAreas(AREA_NAME);
         assertThat(actual, is(ok(expected)));
 
-        then(areaService).should(only()).findAll(AREA_NAME, FALSE);
+        then(areaService).should(only()).findAll(AREA_NAME);
     }
 
     @Test
@@ -70,12 +69,12 @@ class AreaResourceTest {
 
     @Test
     void shouldFindAllAreasThrowsException() {
-        given(areaService.findAll(AREA_NAME, FALSE)).willThrow(EXCEPTION);
+        given(areaService.findAll(AREA_NAME)).willThrow(EXCEPTION);
 
-        final Exception actual = assertThrows(RuntimeException.class, () -> resource.findAllAreas(AREA_NAME, FALSE));
+        final Exception actual = assertThrows(RuntimeException.class, () -> resource.findAllAreas(AREA_NAME));
         assertThat(actual, is(EXCEPTION));
 
-        then(areaService).should(only()).findAll(AREA_NAME, FALSE);
+        then(areaService).should(only()).findAll(AREA_NAME);
     }
 
     @Test

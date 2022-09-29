@@ -26,9 +26,9 @@ public class AreaServiceImpl implements AreaService {
     private final BaseSpecification specification;
 
     @Override
-    public List<AreaResponse> findAll(final String name, final Boolean isDelivery) {
+    public List<AreaResponse> findAll(final String name) {
         final Sort sort = Sort.by(Sort.Direction.ASC, SORT_PROPERTY);
-        final Specification<Area> predicate = specification.toSpecification(name, isDelivery);
+        final Specification<Area> predicate = specification.toSpecification(name);
         return areaRepository.findAll(predicate, sort).stream().map(areaMapper::mapEntityToResponse).toList();
     }
 
