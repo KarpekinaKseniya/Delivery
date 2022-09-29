@@ -21,7 +21,7 @@
             <column name="id" value="2"/>
             <column name="min_weight" value="6.5"/>
             <column name="max_weight" value="21.0"/>
-            <column name="charge" value="12.08"/>
+            <column name="charge" value="-12.08"/>
             <column name="area_id" value="20"/>
         </insert>
         <rollback>
@@ -93,7 +93,7 @@
             <column name="id" value="8"/>
             <column name="min_weight" value="15"/>
             <column name="max_weight" value="23"/>
-            <column name="charge" value="73.26"/>
+            <column name="charge" value="-73.26"/>
             <column name="area_id" value="91"/>
         </insert>
         <rollback>
@@ -105,7 +105,7 @@
             <column name="id" value="9"/>
             <column name="min_weight" value="11"/>
             <column name="max_weight" value="18"/>
-            <column name="charge" value="33.7"/>
+            <column name="charge" value="-33.7"/>
             <column name="area_id" value="71"/>
         </insert>
         <rollback>
@@ -141,7 +141,7 @@
             <column name="id" value="12"/>
             <column name="min_weight" value="6"/>
             <column name="max_weight" value="23"/>
-            <column name="charge" value="75.6"/>
+            <column name="charge" value="-75.6"/>
             <column name="area_id" value="91"/>
         </insert>
         <rollback>
@@ -189,7 +189,7 @@
             <column name="id" value="16"/>
             <column name="min_weight" value="11"/>
             <column name="max_weight" value="25"/>
-            <column name="charge" value="67.68"/>
+            <column name="charge" value="-67.68"/>
             <column name="area_id" value="8"/>
         </insert>
         <rollback>
@@ -213,7 +213,7 @@
             <column name="id" value="18"/>
             <column name="min_weight" value="16"/>
             <column name="max_weight" value="25"/>
-            <column name="charge" value="63.65"/>
+            <column name="charge" value="-63.65"/>
             <column name="area_id" value="19"/>
         </insert>
         <rollback>
@@ -237,7 +237,7 @@
             <column name="id" value="20"/>
             <column name="min_weight" value="14"/>
             <column name="max_weight" value="20"/>
-            <column name="charge" value="25.87"/>
+            <column name="charge" value="-25.87"/>
             <column name="area_id" value="14"/>
         </insert>
         <rollback>
@@ -297,7 +297,7 @@
             <column name="id" value="25"/>
             <column name="min_weight" value="14"/>
             <column name="max_weight" value="19"/>
-            <column name="charge" value="55.79"/>
+            <column name="charge" value="-55.79"/>
             <column name="area_id" value="3"/>
         </insert>
         <rollback>
@@ -513,7 +513,7 @@
             <column name="id" value="43"/>
             <column name="min_weight" value="10"/>
             <column name="max_weight" value="16"/>
-            <column name="charge" value="25.84"/>
+            <column name="charge" value="-25.84"/>
             <column name="area_id" value="70"/>
         </insert>
         <rollback>
@@ -573,7 +573,7 @@
             <column name="id" value="48"/>
             <column name="min_weight" value="7"/>
             <column name="max_weight" value="17"/>
-            <column name="charge" value="18.49"/>
+            <column name="charge" value="-18.49"/>
             <column name="area_id" value="3"/>
         </insert>
         <rollback>
