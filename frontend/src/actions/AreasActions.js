@@ -5,3 +5,9 @@ export const findAllAreas = (name) => {
         .then(response => response.data)
         .catch(error => alert(error))
 }
+
+export const updateArea = (id, area) => {
+    return axios.patch(`/v1/areas/${id}`, area)
+        .then(response => response.status)
+        .catch(error => alert(error))
+}
