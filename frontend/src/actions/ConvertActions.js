@@ -1,4 +1,9 @@
+import {checkCostIsValid} from "./ValidationActions";
+
 export const countTotalCharge = (base, extra) => {
-    const result = base + extra;
-    return result.toFixed(2);
+    if (checkCostIsValid(base) && checkCostIsValid(extra)) {
+        const result = parseFloat(base) + extra;
+        return result.toFixed(2);
+    }
+    return NaN;
 }

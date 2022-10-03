@@ -17,6 +17,10 @@ import SearchIcon from '@mui/icons-material/Search';
 import {findAllAreas, updateArea} from "../actions/AreasActions";
 import NotFound from "./NotFound";
 import {countTotalCharge} from "../actions/ConvertActions";
+import {checkArea, checkCostIsValid, checkMarkupWeight} from "../actions/ValidationActions";
+
+const COST_ERROR_MESSAGE = "Cost should be in format ##; ###.##";
+const WEIGHT_ERROR_MESSAGE = "Weight should be positive number and Min less than Max";
 
 class Areas extends Component {
 
@@ -25,7 +29,7 @@ class Areas extends Component {
         areas: [],
         emptyExtraCharge: {
             minWeight: 0.00,
-            maxWeight: 0.00,
+            maxWeight: 1.00,
             charge: 0.00
         }
     }
@@ -61,14 +65,44 @@ class Areas extends Component {
         let area = this.state.areas.find(obj => obj.id === id);
         let isDelivery = area.hasDelivery;
         area.hasDelivery = !isDelivery;
-        await updateArea(id, area).then((res) => {
-            if (res !== 204) {
-                alert("Something went wrong...");
-                setTimeout(function () {
-                    window.location.reload()
-                }, 1000);
-            }
-        });
+        await this.saveMarkups(id, area);
+        this.setState({areas: this.state.areas});
+    }
+
+    async saveMarkups(id, area) {
+        if (!checkArea(area)) {
+            await updateArea(id, area).then((res) => {
+                if (res !== 204) {
+                    alert("Something went wrong...");
+                    setTimeout(function () {
+                        window.location.reload()
+                    }, 1000);
+                }
+            });
+        } else {
+            alert("Wrong validation");
+        }
+    }
+
+    changeBaseCost(event) {
+        const id = Number(event.target.name);
+        let area = this.state.areas.find(obj => obj.id === id)
+        area.baseCharge = event.target.value;
+        this.setState({areas: this.state.areas});
+    }
+
+    changeMarkup(charge, id, event) {
+        const targetId = event.target.id;
+        const targetValue = parseFloat(event.target.value);
+        let area = this.state.areas.find(obj => obj.id === id)
+        let index = area.extraCharges.indexOf(charge);
+        if (targetId.includes("charge")) {
+            area.extraCharges[index].charge = targetValue;
+        } else if (targetId.includes("min_weight")) {
+            area.extraCharges[index].minWeight = targetValue;
+        } else if (targetId.includes("max_weight")) {
+            area.extraCharges[index].maxWeight = targetValue;
+        }
         this.setState({areas: this.state.areas});
     }
 
@@ -112,7 +146,12 @@ class Areas extends Component {
                                     <Typography>Base cost of delivery:</Typography>
                                 </Grid>
                                 <Grid item style={{marginLeft: "5px"}}>
-                                    <TextField id="base_cost" defaultValue={area.baseCharge} disabled={true}
+                                    <TextField id="base_cost"
+                                               name={area.id + ""}
+                                               defaultValue={area.baseCharge}
+                                               error={!checkCostIsValid(area.baseCharge)}
+                                               onChange={this.changeBaseCost.bind(this)}
+                                               helperText={checkCostIsValid(area.baseCharge) ? "" : COST_ERROR_MESSAGE}
                                                variant="standard"/>
                                 </Grid>
                                 <Grid item xs zeroMinWidth style={{marginTop: "5px"}}>
@@ -120,7 +159,8 @@ class Areas extends Component {
                                 </Grid>
                                 <AccordionActions>
                                     <Grid item>
-                                        <Button variant="contained" size="small" style={{width: "145px"}}
+                                        <Button variant="contained" size="small"
+                                                style={{width: "145px", marginTop: "10px"}}
                                                 onClick={() => this.addMarkUp(area.id)}>
                                             Add Markup
                                         </Button>
@@ -130,7 +170,10 @@ class Areas extends Component {
                                     <Grid container style={{marginTop: "15px"}} key={area.id + "_" + i}>
                                         <Grid item>
                                             <TextField id={"min_weight_" + area.id + "_" + i}
-                                                       defaultValue={charge.minWeight} disabled={true}
+                                                       defaultValue={charge.minWeight}
+                                                       error={!checkMarkupWeight(charge.minWeight, charge.maxWeight)}
+                                                       onChange={this.changeMarkup.bind(this, charge, area.id)}
+                                                       helperText={checkMarkupWeight(charge.minWeight, charge.maxWeight) ? "" : WEIGHT_ERROR_MESSAGE}
                                                        variant="standard"/>
                                         </Grid>
                                         <Grid item style={{marginTop: "5px"}}>
@@ -139,7 +182,9 @@ class Areas extends Component {
                                         <Grid item style={{marginLeft: "5px"}}>
                                             <TextField id={"max_weight_" + area.id + "_" + i}
                                                        defaultValue={charge.maxWeight}
-                                                       disabled={true}
+                                                       error={!checkMarkupWeight(charge.minWeight, charge.maxWeight)}
+                                                       onChange={this.changeMarkup.bind(this, charge, area.id)}
+                                                       helperText={checkMarkupWeight(charge.minWeight, charge.maxWeight) ? "" : WEIGHT_ERROR_MESSAGE}
                                                        variant="standard"/>
                                         </Grid>
                                         <Grid item xs zeroMinWidth style={{marginTop: "5px"}}>
@@ -148,7 +193,9 @@ class Areas extends Component {
                                         <Grid item>
                                             <TextField id={"charge_" + area.id + "_" + i}
                                                        defaultValue={charge.charge}
-                                                       disabled={true}
+                                                       error={!checkCostIsValid(charge.charge)}
+                                                       onChange={this.changeMarkup.bind(this, charge, area.id)}
+                                                       helperText={checkCostIsValid(charge.charge) ? "" : COST_ERROR_MESSAGE}
                                                        variant="standard"/>
                                             <Typography color="text.secondary" variant="subtitle1">
                                                 Total cost: {countTotalCharge(area.baseCharge, charge.charge)}
@@ -171,7 +218,10 @@ class Areas extends Component {
                                 ))}
                             </Grid>
                             <AccordionActions>
-                                <Button variant="contained" color="success">Save Changes</Button>
+                                <Button variant="contained" color="success"
+                                        onClick={() => this.saveMarkups(area.id, area)}>
+                                    Save Changes
+                                </Button>
                             </AccordionActions>
                         </AccordionDetails>
                     </Accordion>))}
