@@ -2,6 +2,8 @@ import './App.css';
 import React, {Component} from "react";
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Areas from "./components/Areas";
+import 'react-notifications/lib/notifications.css';
+import {NotificationContainer} from "react-notifications";
 
 class App extends Component {
 
@@ -14,6 +16,7 @@ class App extends Component {
                         <Route path='/areas' exact={true} element={<Areas/>}/>
                     </Routes>
                 </Router>
+                <NotificationContainer/>
             </div>
         )
     }

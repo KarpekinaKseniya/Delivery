@@ -18,20 +18,23 @@ import {findAllAreas, updateArea} from "../actions/AreasActions";
 import NotFound from "./NotFound";
 import {countTotalCharge} from "../actions/ConvertActions";
 import {checkArea, checkCostIsValid, checkMarkupWeight} from "../actions/ValidationActions";
+import {NotificationManager} from "react-notifications";
 
 const COST_ERROR_MESSAGE = "Cost should be in format ##; ###.##";
 const WEIGHT_ERROR_MESSAGE = "Weight should be positive number and Min less than Max";
 
 class Areas extends Component {
-
-    state = {
-        expanded: '',
-        areas: [],
-        emptyExtraCharge: {
-            minWeight: 0.00,
-            maxWeight: 1.00,
-            charge: 0.00
-        }
+    constructor(props) {
+        super(props);
+        this.state = {
+            expanded: '',
+            areas: [],
+            emptyExtraCharge: {
+                minWeight: 0.00,
+                maxWeight: 1.00,
+                charge: 0.00
+            }
+        };
     }
 
     async componentDidMount() {
@@ -73,14 +76,14 @@ class Areas extends Component {
         if (!checkArea(area)) {
             await updateArea(id, area).then((res) => {
                 if (res !== 204) {
-                    alert("Something went wrong...");
+                    NotificationManager.error("Something went wrong...", 'Error', 2500);
                     setTimeout(function () {
                         window.location.reload()
-                    }, 1000);
+                    }, 2500);
                 }
             });
         } else {
-            alert("Wrong validation");
+            NotificationManager.error("Wrong validation", 'Error', 3000);
         }
     }
 
