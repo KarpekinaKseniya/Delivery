@@ -1,0 +1,5 @@
+{
+  "statusCode": 404,
+  "message": "Area not found by id = 157",
+  "description": "uri=/v1/areas/157"
+}

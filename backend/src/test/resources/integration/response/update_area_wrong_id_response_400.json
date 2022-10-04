@@ -1,0 +1,5 @@
+{
+  "statusCode": 400,
+  "message": "updateArea.id: must be greater than or equal to 1",
+  "description": "uri=/v1/areas/0"
+}

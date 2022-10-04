@@ -1,0 +1,11 @@
+{
+  "baseCharge": 232.8,
+  "hasDelivery": true,
+  "extraCharges": [
+    {
+      "minWeight": -17.25,
+      "maxWeight": -0.01,
+      "charge": 18.76
+    }
+  ]
+}
